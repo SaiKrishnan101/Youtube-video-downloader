@@ -10,15 +10,18 @@ def YouTubeDownloader(video_url, path):
 
 def YouTubeDownloaderPlaylist(video_url,path):
     p = Playlist(video_url)
-    Len = p.length
+    Len = (p.length)- 1
     cnt = 0
+
     for video in p.videos:
         print(f'Downloading: {video.title}')
         video = video.streams.get_highest_resolution()
         video.download(path)
+        cnt+=1
         print(f'Remaining:{Len-cnt}')
         print()
-        cnt += 1
+
+
 
 
 print("---------Welcome To Youtube Downloader-------")
