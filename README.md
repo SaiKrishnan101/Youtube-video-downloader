@@ -24,4 +24,5 @@ Official Documentation
 Future Works:
 --
 - [ ] Add captions/subtitles while Downloading videos
+- [ ] Add progress bar while Downloading
 - [ ] Beautify the UI
