@@ -16,3 +16,12 @@ python -m pip install --upgrade pytube
 ```
 
 2. Run the python file and make your choice as per your wish.
+
+Official Documentation
+--------
+1. [pytube](https:pytube.io)
+
+Future Works:
+--
+- [ ] Add captions/subtitles while Downloading videos
+- [ ] Beautify the UI
