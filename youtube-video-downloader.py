@@ -1,27 +1,27 @@
 from pytube import YouTube
 from pytube import Playlist
+from pytube.cli import on_progress
 
 def YouTubeDownloader(video_url, path):
-    yt = YouTube(video_url)
-    print(f'Downloading:{yt.title}')
+    yt = YouTube(video_url,on_progress_callback=on_progress)
+    captions = yt.captions
+    print(captions)
+    print(f'Downloading:{yt.title}\n')
     yt = yt.streams.get_highest_resolution()
     yt.download(path)
 
 
 def YouTubeDownloaderPlaylist(video_url,path):
-    p = Playlist(video_url)
-    Len = (p.length)- 1
+    p = Playlist(video_url,on_progress_callback=on_progress)
+    Len = (p.length) - 1
     cnt = 0
-
     for video in p.videos:
-        print(f'Downloading: {video.title}')
+        print(f'Downloading: {video.title}\n')
         video = video.streams.get_highest_resolution()
         video.download(path)
-        cnt+=1
+        cnt += 1
         print(f'Remaining:{Len-cnt}')
         print()
-
-
 
 
 print("---------Welcome To Youtube Downloader-------")
@@ -44,5 +44,5 @@ else:
 
 
 
-
+print()
 print("---------TASK COMPLETED!---------")
